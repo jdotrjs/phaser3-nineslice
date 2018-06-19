@@ -31,8 +31,8 @@ TODO: publish
 
 ## Usage
 
-Assuming you've included the plugin through one of the methods above there are
-two final steps to enable usage in your project:
+Once you've included the plugin through one of the methods above there are two
+final steps to make use of it in your project:
 
 ### 1. Enable the Plugin in your `Game` config:
 
@@ -57,14 +57,14 @@ let phaserConfig = {
 new Phaser.Game(phaserConfig)
 ```
 
-You probably won't need to care but, internally, `DefaultCfg` is just defined
-as `{ key: 'NineSlice', plugin: Plugin, start: true }` but any key can be used
-if you need to change it.
+You likely won't need to mess with it but, internally, `DefaultCfg` is
+defined as `{ key: 'NineSlice', plugin: Plugin, start: true }` but any key
+can be used if you need to change it.
 
 ### 2. Use the plugin to make 9-sliced objects!
 
 The easiest way to construct a new sliced object is to use the new
-`GameObjectFactory` method (`this.add.nineslice`) or the new `GameObjectCreator`
+`GameObjectFactory` method (`this.add.nineslice`) or new `GameObjectCreator`
 method (`this.make.nineslice`).
 
 ```javascript
@@ -86,6 +86,16 @@ above are used.
 
 ![9-slice layout](./layout.png)
 
+The red lines are the slices that have been created out of the underlying
+texture. The green rectangle is an area called the "safe usable area" which
+represents the space that can be used to house content within this 9-slice
+object. It's available as a `Phaser.Geom.Retangle` via `.getUsableBounds`
+method on the 9 slice object. Whenever the object changes x/y position or
+is resized an event `NineSlice.EVENT.UPDATE_SAFE_BOUNDS` is emitted;
+[code ref][emitref].
+
+[emitref]: ./src/NineSlice.js#L133
+
 **Spritesheets and Texture Atlases**
 
 The fifth paramater is used to specify the texture and can be provided as a
@@ -105,7 +115,7 @@ by `key`.
 
 If your texture doesn't have uniform corners you can define the width and height
 offsets of each independently using a slightly more complicated format. The same
-true for the safe usage area (we'll discuss what this is later).
+true for the safe usage area.
 
 ```javascript
 this.dlg = this.add.nineslice(
@@ -128,12 +138,12 @@ Array Length  | Use  | Explanation |
 3 | `[ top, rightLeft, bottom ]` | The first element is used for the top, second is used for the right and left, and the third element is used for the bottom
 4 | `[ top, right, bottom, left ]` | Each element is assigned to a specific side
 
-In addition to switching to on array to define the pixel offsets for the corners
-our example also left out the safe area usage. Don't worry as it will be derived
-from the four corner offsets as seen above by the green area. If an array is
-used instead of a number it is expanded in the same way as
+In addition to switching to an array to define the pixel offsets for the corners
+our example also left out the safe area usage. In this case will be derived from
+the four corner offsets as seen above by the green area. If an array is used
+instead of a number it is expanded in the same way as
 
-**Resizing your 9Slice**
+**Resizing your 9 Slice**
 
 Directly setting the `.width` and `.height` attributes will cause scaling issues
 (TBD: bug). If you wish to change the object's size you should use `.resize`:
@@ -148,7 +158,7 @@ Directly setting the `.width` and `.height` attributes will cause scaling issues
 ```
 
 If the call to resize would result in the safe area having an area of less than
-0 it will only reduce it's size to that point.
+0 or the corners to overlap then it will only reduce its size to that point.
 
 **Direct Configuration**
 
@@ -184,7 +194,7 @@ Arguments =
      h: number,
      source: FrameSelection,
      corner: OffsetConfig,
-     safeArea: OffsetConfig)
+     safeArea: OffsetConfig | null)
 
 FrameSelection =
   | key: string

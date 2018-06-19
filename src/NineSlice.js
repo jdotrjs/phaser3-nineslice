@@ -36,10 +36,10 @@ const defaultSliceConfig = sc => {
     const offsets = defaulted.safeOffsets
     defaulted.minSizing = {
       width: offsets
-        ? offsets.left + offsets.right
+        ? Math.max(offsets.left + offsets.right, maxLeftWidth + maxRightWidth)
         : maxLeftWidth + maxRightWidth,
       height: offsets
-        ? offsets.top + offsets.bottom
+        ? Math.max(offsets.top + offsets.bottom, maxTopHeight + maxBottomHeight)
         : maxTopHeight + maxBottomHeight,
     }
   } else {
@@ -181,8 +181,8 @@ export default class NineSlice extends Phaser.GameObjects.RenderTexture {
     if (this._g) {
       this._g.clear()
     }
-    this.updateSafeBounds()
     this.drawFrames()
+    this.updateSafeBounds()
   }
 
   initFrames() {
