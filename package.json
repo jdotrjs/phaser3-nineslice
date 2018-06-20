@@ -31,7 +31,5 @@
     "lint": "eslint src/**.js",
     "lint:fix": "eslint src/**.js --fix"
   },
-  "dependencies": {
-    "lodash": "^4.17.10"
-  }
+  "dependencies": {}
 }

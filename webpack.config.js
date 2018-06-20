@@ -1,11 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
-const u = require('./webpack.util.js')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-
-
-// lists all files rooted at the directory `base`
-const fileList = base => u.getFilesIn(u.getDirPath(base))
 
 const main = './src/index.js'
 
@@ -14,14 +9,11 @@ const sourcePaths = [main]
 module.exports = {
   entry: sourcePaths,
 
-  devtool: 'cheap-module-eval-source-map',
-
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'nineslice.js',
-    libraryTarget: 'var',
+    libraryTarget: 'umd',
     library: 'NineSlice',
-    // devtoolModuleFilenameTemplate: 'webpack:///[absolute-resource-path]',
   },
 
   module: {
@@ -31,7 +23,6 @@ module.exports = {
         loader: 'babel-loader',
         exclude: [
           /node_modules/,
-          /vendor/,
         ],
       },
     ],

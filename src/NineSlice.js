@@ -1,7 +1,5 @@
-import cloneDeep from 'lodash/cloneDeep'
-
 const defaultSliceConfig = sc => {
-  const defaulted = cloneDeep(sc)
+  const defaulted = sc
   if (typeof defaulted.sourceLayout.width === 'number') {
     // this means sourceLayout is a cornerconfig and should be used for all
     // four corners
