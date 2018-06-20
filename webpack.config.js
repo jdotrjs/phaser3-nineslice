@@ -16,6 +16,10 @@ module.exports = {
     library: 'NineSlice',
   },
 
+  externals: {
+    phaser: 'phaser',
+  },
+
   module: {
     rules: [
       {

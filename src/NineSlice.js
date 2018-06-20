@@ -1,3 +1,5 @@
+import Phaser from 'phaser'
+
 const defaultSliceConfig = sc => {
   const defaulted = sc
   if (typeof defaulted.sourceLayout.width === 'number') {

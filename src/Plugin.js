@@ -1,3 +1,4 @@
+import Phaser from 'phaser'
 import NineSlice from './NineSlice'
 import processOffsetsArray from './util'
 
