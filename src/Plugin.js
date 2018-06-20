@@ -29,7 +29,10 @@ const mkNineSlice = (scene, args) => {
     )
   }
   if (args.length > 7) {
-    console.error(`Expected less than 7 arguments for NineSlice creation, received ${args.length}.`)
+    // eslint-disable-next-line no-console
+    console.error(
+      `Expected less than 7 arguments for NineSlice creation, received ${args.length}.`
+    )
   }
 
   const [x, y, width, height, keyCfg, offsetCfg] = args
@@ -73,9 +76,7 @@ const mkNineSlice = (scene, args) => {
       const [top, right, bottom, left] = processOffsetsArray(args[6])
       sliceConfig.safeOffsets = { top, right, bottom, left }
     } else {
-      throw new Error(
-        `Expected argument number or array for argument 7, got ${typeof args[6]}.`
-      )
+      throw new Error(`Expected argument number or array for argument 7, got ${typeof args[6]}.`)
     }
   }
 

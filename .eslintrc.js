@@ -8,6 +8,14 @@ module.exports = {
         "sourceType": "module"
     },
     "rules": {
+        "max-len": [
+            "error",
+            {
+                "code": 100,
+                "tabWidth": 4,
+                "ignoreUrls": true
+            }
+        ],
         "indent": [
             "error",
             2

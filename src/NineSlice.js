@@ -170,6 +170,7 @@ export default class NineSlice extends Phaser.GameObjects.RenderTexture {
     if (h > _h || w > _w) {
       const err =
         `Attempted to set NineSlice size less than minimum (${_w}x${_h}).`
+      // eslint-disable-next-line no-console
       console.error(err)
     }
 
