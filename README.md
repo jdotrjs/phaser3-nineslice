@@ -30,8 +30,19 @@ repository.
 
 ## Getting the plugin: `npm` and `yarn`
 
-Still working through the process of finalizing released version. Until then
-watch this space: https://www.npmjs.com/package/phaser3-nineslice/
+This is published under [phaser3-nineslice][npmjs] add can be added to your
+project via:
+
+```bash
+# npm:
+npm install phaser3-nineslice --save
+
+# yarn:
+yarn add phaser3-nineslice
+yarn install
+```
+
+[npmjs]: https://www.npmjs.com/package/phaser3-nineslice/
 
 ## Usage
 
