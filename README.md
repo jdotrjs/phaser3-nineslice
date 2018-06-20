@@ -9,7 +9,7 @@ without deforming the corners.  Usually this is done to retain the shape or
 embelishments on the corners. Wikipedia has a [good description][wiki]. But it's
 pretty easy to show an example:
 
-![9-slice scaling example](./9slice-demo.gif)
+![9-slice scaling example](./README/9slice-demo.gif)
 
 [wiki]: https://en.wikipedia.org/wiki/9-slice_scaling
 [demo-url]: TODO
@@ -84,7 +84,7 @@ method (`this.make.nineslice`).
 Examining the resulting object added to your scene we can observe how the numbers
 above are used.
 
-![9-slice layout](./layout.png)
+![9-slice layout](./README/layout.png)
 
 The red lines are the slices that have been created out of the underlying
 texture. The green rectangle is an area called the "safe usable area" which
@@ -126,7 +126,7 @@ this.dlg = this.add.nineslice(
 
 This results in the following texture slicing:
 
-![9slice with non-uniform corner sizes](./layout-2.png)
+![9slice with non-uniform corner sizes](./README/layout-2.png)
 
 When an array is used it can be 1 to 4 elements and the values are assigned the
 same way as when defining border offsets in CSS.
