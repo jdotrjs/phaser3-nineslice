@@ -12,14 +12,17 @@ pretty easy to show an example:
 ![9-slice scaling example](./README/9slice-demo.gif)
 
 [wiki]: https://en.wikipedia.org/wiki/9-slice_scaling
-[demo-url]: TODO
+[demo-url]: https://jdotrjs.github.io/phaser3-nineslice/
 
 ## Getting the plugin: Directly including it.
 
 Include [`nineslice.js`](./dist/nineslice.js) in your project:
 
 ```html
-<script type="text/javascript" src="//TODO"></script>
+<script
+  type="text/javascript"
+  src="https://github.com/jdotrjs/phaser3-nineslice/releases/download/v0.1.1/nineslice.js"
+></script>
 ```
 
 I used this method in the demo. The [source is included](./example) in this
@@ -27,7 +30,8 @@ repository.
 
 ## Getting the plugin: `npm` and `yarn`
 
-TODO: publish
+Still working through the process of finalizing released version. Until then
+watch this space: https://www.npmjs.com/package/phaser3-nineslice/
 
 ## Usage
 
