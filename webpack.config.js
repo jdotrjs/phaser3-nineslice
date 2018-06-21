@@ -17,7 +17,14 @@ module.exports = {
   },
 
   externals: {
-    phaser: 'phaser',
+    phaser : {
+      umd: 'phaser',
+      commonjs2: 'phaser',
+      commonjs: 'phaser',
+      amd: 'phaser',
+      // indicates global variable should be used
+      root: 'Phaser'
+    }
   },
 
   module: {
