@@ -161,7 +161,7 @@ instead of a number it is expanded in the same way as
 **Resizing your 9 Slice**
 
 Directly setting the `.width` and `.height` attributes will cause scaling issues
-(TBD: bug). If you wish to change the object's size you should use `.resize`:
+([#1][iss1]). If you wish to change the object's size you should use `.resize`:
 
 ```javascript
   this.dlg = this.add.nineslice(
@@ -174,6 +174,8 @@ Directly setting the `.width` and `.height` attributes will cause scaling issues
 
 If the call to resize would result in the safe area having an area of less than
 0 or the corners to overlap then it will only reduce its size to that point.
+
+[iss1]: https://github.com/jdotrjs/phaser3-nineslice/issues/1
 
 **Direct Configuration**
 
