@@ -17,7 +17,13 @@ module.exports = {
   },
 
   externals: {
-    phaser: 'phaser',
+    phaser : {
+      umd: 'phaser',
+      commonjs2: 'phaser', //fu webpack
+      commonjs: 'phaser', //fu webpack
+      amd: 'phaser', //fu webpack
+      root: 'Phaser' // indicates global variable
+    }
   },
 
   module: {

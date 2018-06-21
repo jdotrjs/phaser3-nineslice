@@ -1,8 +1,2 @@
-import NineSlice, { EVENTS } from './NineSlice'
-import Plugin from './Plugin'
-
-export {
-  EVENTS,
-  NineSlice,
-  Plugin,
-}
+export {default as NineSlice, EVENTS} from './NineSlice';
+export {default as Plugin} from './Plugin';

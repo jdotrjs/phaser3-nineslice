@@ -53,7 +53,7 @@ final steps to make use of it in your project:
 
 ```javascript
 // Assuming you use use ES6 imports...
-import * as NineSlice from 'phaser3-nineslice'
+import {Plugin as NineSlicePlugin} from 'phaser3-nineslice'
 
 import { Scene1 } from './scene'
 
@@ -64,7 +64,7 @@ let phaserConfig = {
   width: 800,
   height: 600,
   plugins: {
-    global: [ NineSlice.Plugin.DefaultCfg ],
+    global: [ NineSlicePlugin.DefaultCfg ],
   },
   scene: [ Scene1 ],
 }
@@ -73,7 +73,7 @@ new Phaser.Game(phaserConfig)
 ```
 
 You likely won't need to mess with it but, internally, `DefaultCfg` is
-defined as `{ key: 'NineSlice', plugin: Plugin, start: true }` but any key
+defined as `{ key: 'NineSlice', plugin: NineSlicePlugin, start: true }` but any key
 can be used if you need to change it.
 
 ### 2. Use the plugin to make 9-sliced objects!
