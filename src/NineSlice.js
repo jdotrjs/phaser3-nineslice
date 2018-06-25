@@ -95,7 +95,10 @@ export default class NineSlice extends Phaser.GameObjects.RenderTexture {
       throw new Error(`Expected source image ${sourceKey} not found.`)
     }
 
-    const frameName = sourceFrame ? sourceFrame : BASE
+    const frameName =
+      (typeof sourceFrame === 'string' || typeof sourceFrame === 'number')
+        ? sourceFrame
+        : BASE
     this.sourceFrame = this.sourceTex.get(frameName)
 
     // construct 9 frames for mortal men, doomed to die
