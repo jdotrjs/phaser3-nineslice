@@ -1,13 +1,13 @@
 {
   "name": "phaser3-nineslice",
   "description": "A 9-slice implementation for Phaser 3",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "main": "./dist/nineslice.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:jdotrjs/phaser3-nineslice.git"
   },
-  "homepage": "https://pages.github.io/jdotrjs/phaser3-nineslice/",
+  "homepage": "https://jdotrjs.github.io/phaser3-nineslice/",
   "bugs": {
     "url": "https://github.com/jdotrjs/phaser3-nineslice/issues"
   },
