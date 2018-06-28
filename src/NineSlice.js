@@ -193,8 +193,8 @@ export default class NineSlice extends Phaser.GameObjects.RenderTexture {
     const tex = this.sourceTex
     const texW = this.sourceFrame.width
     const texH = this.sourceFrame.height
-    const texX = this.sourceFrame.x
-    const texY = this.sourceFrame.y
+    const texX = this.sourceFrame.cutX
+    const texY = this.sourceFrame.cutY
 
     const addFrame = (name, x, y, w, h) => {
       if (!tex.has(name)) {

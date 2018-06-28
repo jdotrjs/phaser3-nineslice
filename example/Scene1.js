@@ -26,7 +26,6 @@ class Scene1 extends Phaser.Scene {
       [35, 15, 15]
     )
 
-    //
     this.mode = 0
     this.txt = this.add.text(10, 10)
     this.input.on('pointerdown', () => {
