@@ -82,7 +82,7 @@ The easiest way to construct a new sliced object is to use the new
 method (`this.make.nineslice`).
 
 ```javascript
-  create() {}
+  create() {
     this.dlg = this.add.nineslice(
       110, 110,   // this is the starting x/y location
       340, 240,   // the width and height of your object
@@ -92,7 +92,7 @@ method (`this.make.nineslice`).
     )
 
     // ... additional scene creation code
-  )
+  }
 ```
 
 Examining the resulting object added to your scene we can observe how the numbers
