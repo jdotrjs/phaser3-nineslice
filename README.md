@@ -30,6 +30,8 @@ repository.
 
 ## Getting the plugin: `npm` and `yarn`
 
+[![npm](https://img.shields.io/npm/dt/phaser3-nineslice.svg)](https://www.npmjs.com/package/phaser3-nineslice)
+
 This is published under [phaser3-nineslice][npmjs] add can be added to your
 project via:
 
