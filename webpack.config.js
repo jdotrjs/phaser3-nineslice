@@ -1,6 +1,5 @@
 const path = require('path')
 const webpack = require('webpack')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 const main = './src/index.js'
 
@@ -8,6 +7,8 @@ const sourcePaths = [main]
 
 module.exports = {
   entry: sourcePaths,
+
+  mode: 'production',
 
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -37,9 +38,5 @@ module.exports = {
         ],
       },
     ],
-  },
-
-  plugins: [
-    new UglifyJsPlugin(),
-  ],
+  }
 };
