@@ -1,6 +1,6 @@
 import Phaser from 'phaser'
 import NineSlice from './NineSlice'
-import processOffsetsArray from './util'
+import processOffsetsArray from './processOffsetsArray'
 
 export default class Plugin extends Phaser.Plugins.BasePlugin {
   constructor(mgr) {

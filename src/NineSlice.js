@@ -1,5 +1,7 @@
 import Phaser from 'phaser'
 
+import murmur from './murmur'
+
 const defaultSliceConfig = sc => {
   const defaulted = sc
   if (typeof defaulted.sourceLayout.width === 'number') {
@@ -94,6 +96,14 @@ export default class NineSlice extends Phaser.GameObjects.RenderTexture {
     if (!this.sourceTex || this.sourceTex.key === MISSING) {
       throw new Error(`Expected source image ${sourceKey} not found.`)
     }
+
+    // use this to reduce chance we'll overwrite an existing frame
+    this._framePrefix = `${murmur(JSON.stringify({sourceKey, sourceFrame}, 404))}`
+    // this constructs a namespaced frame name
+    this.mkFrameName = n => `${this._framePrefix}-${n}`
+    // store constructed frames so we have direct access to the frame for the
+    // specific corners
+    this._frameCache = {}
 
     const frameName =
       (typeof sourceFrame === 'string' || typeof sourceFrame === 'number')
@@ -196,9 +206,10 @@ export default class NineSlice extends Phaser.GameObjects.RenderTexture {
     const texX = this.sourceFrame.cutX
     const texY = this.sourceFrame.cutY
 
-    const addFrame = (name, x, y, w, h) => {
+    const addFrame = (_name, x, y, w, h) => {
+      const name = this.mkFrameName(_name)
       if (!tex.has(name)) {
-        tex.add(name, 0, texX + x, texY + y, w, h)
+        this._frameCache[_name] = tex.add(name, 0, texX + x, texY + y, w, h)
       }
     }
 
@@ -250,7 +261,7 @@ export default class NineSlice extends Phaser.GameObjects.RenderTexture {
     }
 
     const sl = shortSliceLayout(this.sliceConfig.sourceLayout)
-    const frame = this.sourceTex.frames
+    const frame = this._frameCache
 
     const draw = (curFrame, x, y, wantWidth, wantHeight) => {
       if (wantWidth > 0 && wantHeight > 0) {
