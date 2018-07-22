@@ -111,8 +111,11 @@ export default class NineSlice extends Phaser.GameObjects.RenderTexture {
         : BASE
     this.sourceFrame = this.sourceTex.get(frameName)
 
+    this._frameRotated = !!this.sourceFrame.rotated
+    this._unwindRotation = -Math.PI / 2
+
     // construct 9 frames for mortal men, doomed to die
-    this.initFrames()
+    this.initFrames(this._frameRotated)
 
     // We've gotten everything setup that is necessary for normal operation so
     // we can unblock a bunch of the NineSlice specific stuff.
@@ -199,7 +202,11 @@ export default class NineSlice extends Phaser.GameObjects.RenderTexture {
     this.updateSafeBounds()
   }
 
-  initFrames() {
+  initFrames(isRotated) {
+    if (isRotated) {
+      // eslint-disable-next-line no-console
+      console.error('phaser3-nineslice does not support rotated source frames')
+    }
     const tex = this.sourceTex
     const texW = this.sourceFrame.width
     const texH = this.sourceFrame.height
@@ -274,6 +281,9 @@ export default class NineSlice extends Phaser.GameObjects.RenderTexture {
         const scaleY = wantHeight / curFrame.height
         this.scale(scaleX, scaleY)
         this.draw(this.sourceTex, curFrame, 0, 0)
+        if (this._frameRotated) {
+          this.rotate(this._unwindRotation)
+        }
         this.restore()
       }
     }

@@ -7,6 +7,10 @@ class Scene1 extends Phaser.Scene {
 
   preload() {
     this.load.image('kenny', './assets/kennyBlue.png')
+    this.load.atlas(
+      'atlas',
+      './rotation-issue/atlas-rotation.png',
+      './rotation-issue/atlas-rotation.json')
   }
 
   create() {
@@ -22,8 +26,8 @@ class Scene1 extends Phaser.Scene {
       this.startY,
       width,
       height,
-      'kenny',
-      [35, 15, 15]
+      { key: 'atlas', frame: 'ui/dialogue-box.png' },
+      10
     )
 
     this.mode = 0
