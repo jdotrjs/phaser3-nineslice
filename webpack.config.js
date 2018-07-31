@@ -9,6 +9,7 @@ module.exports = {
   entry: sourcePaths,
 
   mode: 'production',
+  // mode: 'development',
 
   output: {
     path: path.resolve(__dirname, 'dist'),
