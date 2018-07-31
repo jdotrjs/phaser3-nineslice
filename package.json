@@ -1,7 +1,7 @@
 {
   "name": "phaser3-nineslice",
   "description": "A 9-slice implementation for Phaser 3",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "main": "./dist/nineslice.js",
   "repository": {
     "type": "git",
