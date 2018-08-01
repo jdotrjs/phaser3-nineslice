@@ -1,5 +1,12 @@
 # Phaser3 9-slice Plugin
 
+> This is built for Phaser v3 and was inspired by the fantastic v2/CE version
+contributed by [AleBles][AleBles]. Find it at [@orange-games/phaser-nineslice][orange].
+
+[AleBles]: https://github.com/AleBles
+[orange]: https://github.com/orange-games/phaser-nineslice
+
+
 ## What is 9-slice scaling?
 
 **tl;dr:** See a [demo][demo-url]!
