@@ -21,6 +21,11 @@ pretty easy to show an example:
 [wiki]: https://en.wikipedia.org/wiki/9-slice_scaling
 [demo-url]: https://jdotrjs.github.io/phaser3-nineslice/
 
+## Requirements
+
+- phaser3-nineslice version >= 0.4.0 require Phaser >= 3.12.
+- phaser3-nineslice versions 0.3.x require Phaser >= 3.10.
+
 ## Getting the plugin: Directly including it.
 
 Include [`nineslice.js`](./dist/nineslice.js) in your project:
@@ -28,7 +33,7 @@ Include [`nineslice.js`](./dist/nineslice.js) in your project:
 ```html
 <script
   type="text/javascript"
-  src="https://github.com/jdotrjs/phaser3-nineslice/releases/download/v0.3.7/nineslice.js"
+  src="https://github.com/jdotrjs/phaser3-nineslice/releases/download/v0.4.0/nineslice.js"
 ></script>
 ```
 
