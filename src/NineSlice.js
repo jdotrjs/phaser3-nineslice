@@ -270,13 +270,23 @@ export default class NineSlice extends Phaser.GameObjects.RenderTexture {
         if (this._g) {
           this._g.strokeRect(this.x + x, this.y + y, wantWidth, wantHeight)
         }
-        this.save()
-        this.translate(x, y)
+
+        const frameImage = this.scene.make.image({
+          key: this.sourceTex.key,
+          frame: curFrame.name,
+          x: 0,
+          y: 0,
+        })
+
         const scaleX = wantWidth / curFrame.width
         const scaleY = wantHeight / curFrame.height
-        this.scale(scaleX, scaleY)
-        this.draw(this.sourceTex, curFrame, 0, 0)
-        this.restore()
+
+        frameImage
+          .setOrigin(0)
+          .setScale(scaleX, scaleY)
+
+        this.draw(frameImage, x, y)
+        frameImage.destroy()
       }
     }
 
