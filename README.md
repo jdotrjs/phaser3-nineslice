@@ -53,7 +53,6 @@ npm install phaser3-nineslice --save
 
 # yarn:
 yarn add phaser3-nineslice
-yarn install
 ```
 
 [npmjs]: https://www.npmjs.com/package/phaser3-nineslice/
