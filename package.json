@@ -3,6 +3,7 @@
   "description": "A 9-slice implementation for Phaser 3",
   "version": "0.4.0",
   "main": "./dist/nineslice.js",
+  "types": "./nineslice.d.ts",
   "repository": {
     "type": "git",
     "url": "git@github.com:jdotrjs/phaser3-nineslice.git"
