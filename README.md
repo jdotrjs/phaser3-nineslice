@@ -33,7 +33,7 @@ Include [`nineslice.js`](./dist/nineslice.js) in your project:
 ```html
 <script
   type="text/javascript"
-  src="https://github.com/jdotrjs/phaser3-nineslice/releases/download/v0.4.0/nineslice.js"
+  src="https://github.com/jdotrjs/phaser3-nineslice/releases/download/v0.5.0/nineslice.min.js"
 ></script>
 ```
 
