@@ -78,9 +78,9 @@ declare namespace Phaser.GameObjects {
          * 
          * ```javascript
          * {
-            *   key: string,
-            *   frame: string | number,
-            * }
+         *   key: string,
+         *   frame: string | number,
+         * }
          * ```
          * 
          * if you would like to specify a frame within a spritesheet or atlas indicated 
