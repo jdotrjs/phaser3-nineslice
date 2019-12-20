@@ -116,6 +116,9 @@ declare namespace Phaser.GameObjects {
          */
         nineslice(x: number, y: number, width: number, height: number, key: string,
             nonUniform: number[]): Phaser.GameObjects.RenderTexture;
+
+        nineslice(x: number, y: number, width: number, height: number, { key: string, frame: any },
+            nonUniform: number[]): Phaser.GameObjects.RenderTexture;
     }
 
     // TODO: .make.nineslice return type & argument types
