@@ -128,7 +128,7 @@ export default class NineSlice extends Phaser.GameObjects.RenderTexture {
 
   updateSafeBounds() {
     if (!this._initalized) {
-      return
+      return this
     }
 
     const { top, right, bottom, left } = this.sliceConfig.safeOffsets
@@ -149,6 +149,7 @@ export default class NineSlice extends Phaser.GameObjects.RenderTexture {
       this._g.lineStyle(1, 0x00ff00)
       this._g.strokeRectShape(this._safeBounds)
     }
+    return this
   }
 
   get y() { return this._y }
@@ -189,7 +190,7 @@ export default class NineSlice extends Phaser.GameObjects.RenderTexture {
 
     super.resize(w, h)
     if (!this._initalized) {
-      return
+      return this;
     }
 
     if (this._g) {
@@ -197,6 +198,7 @@ export default class NineSlice extends Phaser.GameObjects.RenderTexture {
     }
     this.drawFrames()
     this.updateSafeBounds()
+    return this
   }
 
   initFrames() {
@@ -243,6 +245,7 @@ export default class NineSlice extends Phaser.GameObjects.RenderTexture {
     addFrame('center',
       cLeftX, cTopY,
       texW - cLeftX - Math.min(sl.tr.x, sl.br.x), texH - cTopY - Math.min(sl.br.y, sl.bl.y))
+    return this
   }
 
   getUsableBounds() {
@@ -255,7 +258,7 @@ export default class NineSlice extends Phaser.GameObjects.RenderTexture {
 
   drawFrames() {
     if (!this._initalized) {
-      return
+      return this
     }
 
     if (this._g) {
@@ -320,6 +323,7 @@ export default class NineSlice extends Phaser.GameObjects.RenderTexture {
     draw(frame.topRight, this.width - sl.tr.x, 0, sl.tr.x, sl.tr.y)
     draw(frame.bottomRight, this.width - sl.br.x, this.height - sl.br.y, sl.br.x, sl.br.y)
     draw(frame.bottomLeft, 0, this.height - sl.bl.y, sl.bl.x, sl.bl.y)
+    return this
   }
 
   enableDebugDraw(enabled = true) {
@@ -334,5 +338,6 @@ export default class NineSlice extends Phaser.GameObjects.RenderTexture {
     }
     this.drawFrames()
     this.updateSafeBounds()
+    return this
   }
 }
