@@ -18,16 +18,7 @@ module.exports = {
     library: 'NineSlice',
   },
 
-  externals: {
-    phaser : {
-      umd: 'phaser',
-      commonjs2: 'phaser',
-      commonjs: 'phaser',
-      amd: 'phaser',
-      // indicates global variable should be used
-      root: 'Phaser'
-    }
-  },
+  externals: /^phaser(\/.*)?/,
 
   module: {
     rules: [

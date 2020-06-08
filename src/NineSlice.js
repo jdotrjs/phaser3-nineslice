@@ -1,4 +1,7 @@
-import Phaser from 'phaser'
+import 'phaser/src/gameobjects/image/ImageCreator'
+import RenderTexture from 'phaser/src/gameobjects/rendertexture/RenderTexture'
+import EventEmitter from 'phaser/src/events/EventEmitter'
+import Rectangle from 'phaser/src/geom/rectangle/Rectangle'
 
 import murmur from './murmur'
 
@@ -65,7 +68,7 @@ export const EVENTS = {
   UPDATE_SAFE_BOUNDS: 'updatesafebounds',
 }
 
-export default class NineSlice extends Phaser.GameObjects.RenderTexture {
+export default class NineSlice extends RenderTexture {
   /**
    * @param {Phaser.Scene} scene the parent scene for this NineSlice
    * @param {SliceConfig} _sliceConfig specifies details of where we source
@@ -84,9 +87,9 @@ export default class NineSlice extends Phaser.GameObjects.RenderTexture {
     this.updateSafeBounds = this.updateSafeBounds.bind(this)
     this.enableDebugDraw = this.enableDebugDraw.bind(this)
 
-    this.events = new Phaser.Events.EventEmitter()
+    this.events = new EventEmitter()
     this.sliceConfig = defaultSliceConfig(_sliceConfig)
-    this._safeBounds = new Phaser.Geom.Rectangle()
+    this._safeBounds = new Rectangle()
 
     const { sourceKey, sourceFrame } = this.sliceConfig
     this.sourceTex = scene.sys.textures.get(this.sliceConfig.sourceKey)

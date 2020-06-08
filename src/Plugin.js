@@ -1,8 +1,8 @@
-import Phaser from 'phaser'
+import BasePlugin from 'phaser/src/plugins/BasePlugin'
 import NineSlice from './NineSlice'
 import processOffsetsArray from './processOffsetsArray'
 
-export default class Plugin extends Phaser.Plugins.BasePlugin {
+export default class Plugin extends BasePlugin {
   constructor(mgr) {
     super(mgr)
     mgr.registerGameObject('nineslice', this.addNineSlice, this.makeNineSlice)
