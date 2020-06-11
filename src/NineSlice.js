@@ -1,4 +1,4 @@
-import 'phaser/src/gameobjects/image/ImageCreator'
+import Image from 'phaser/src/gameobjects/image/Image'
 import RenderTexture from 'phaser/src/gameobjects/rendertexture/RenderTexture'
 import EventEmitter from 'phaser/src/events/EventEmitter'
 import Rectangle from 'phaser/src/geom/rectangle/Rectangle'
@@ -274,12 +274,7 @@ export default class NineSlice extends RenderTexture {
           this._g.strokeRect(this.x + x, this.y + y, wantWidth, wantHeight)
         }
 
-        const frameImage = this.scene.make.image({
-          key: this.sourceTex.key,
-          frame: curFrame.name,
-          x: 0,
-          y: 0,
-        })
+        const frameImage = new Image(this.scene, 0, 0, this.sourceTex.key, curFrame.name)
 
         const scaleX = wantWidth / curFrame.width
         const scaleY = wantHeight / curFrame.height
