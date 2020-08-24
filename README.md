@@ -2,6 +2,10 @@
 
 > This is built for Phaser v3 and was inspired by the fantastic v2/CE version
 contributed by [AleBles][AleBles]. Find it at [@orange-games/phaser-nineslice][orange].
+>
+> This plugin is not actively maintained but I am happy to apply PRs and push a
+> new builds as things come in. Additionally If somebode wants to fork I can redirect
+> folks to a new repo as well :bow:
 
 [AleBles]: https://github.com/AleBles
 [orange]: https://github.com/orange-games/phaser-nineslice
