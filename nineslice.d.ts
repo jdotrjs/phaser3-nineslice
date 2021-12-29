@@ -86,7 +86,7 @@ declare namespace Phaser.GameObjects {
          * if you would like to specify a frame within a spritesheet or atlas indicated 
          * by `key`.
          */
-        nineslice(x: number, y: number, width: number, height: number, key: string,
+        nineslice(x: number, y: number, width: number, height: number, key: string | { key: string, frame: string | number },
             offset: number, safeArea?: number): Phaser.GameObjects.RenderTexture;
 
         /**
