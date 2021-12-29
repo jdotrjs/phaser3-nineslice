@@ -15,7 +15,7 @@ contributed by [AleBles][AleBles]. Find it at [@orange-games/phaser-nineslice][o
 I fell out of phaser development many years and didn't realize this library was still
 getting use 😅. If you'd like to adopt it I'm sure it would love a little care and
 feeding. I'll watch for updates to [this ticket][love_me_plz] and then hopefully
-un-mothball ye olde plugin.
+somebody can un-mothball ye olde plugin.
 
 [love_me_plz]: https://github.com/jdotrjs/phaser3-nineslice/issues/52
 
