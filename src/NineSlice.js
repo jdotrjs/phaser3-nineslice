@@ -1,4 +1,7 @@
-import Phaser from 'phaser'
+import Image from 'phaser/src/gameobjects/image/Image'
+import RenderTexture from 'phaser/src/gameobjects/rendertexture/RenderTexture'
+import EventEmitter from 'phaser/src/events/EventEmitter'
+import Rectangle from 'phaser/src/geom/rectangle/Rectangle'
 
 import murmur from './murmur'
 
@@ -65,7 +68,7 @@ export const EVENTS = {
   UPDATE_SAFE_BOUNDS: 'updatesafebounds',
 }
 
-export default class NineSlice extends Phaser.GameObjects.RenderTexture {
+export default class NineSlice extends RenderTexture {
   /**
    * @param {Phaser.Scene} scene the parent scene for this NineSlice
    * @param {SliceConfig} _sliceConfig specifies details of where we source
@@ -86,9 +89,9 @@ export default class NineSlice extends Phaser.GameObjects.RenderTexture {
     this.updateSafeBounds = this.updateSafeBounds.bind(this)
     this.enableDebugDraw = this.enableDebugDraw.bind(this)
 
-    this.events = new Phaser.Events.EventEmitter()
+    this.events = new EventEmitter()
     this.sliceConfig = defaultSliceConfig(_sliceConfig)
-    this._safeBounds = new Phaser.Geom.Rectangle()
+    this._safeBounds = new Rectangle()
 
     const { sourceKey, sourceFrame } = this.sliceConfig
     this.sourceTex = scene.sys.textures.get(this.sliceConfig.sourceKey)
@@ -272,12 +275,7 @@ export default class NineSlice extends Phaser.GameObjects.RenderTexture {
           this._g.strokeRect(this.x + x, this.y + y, wantWidth, wantHeight)
         }
 
-        const frameImage = this.scene.make.image({
-          key: this.sourceTex.key,
-          frame: curFrame.name,
-          x: 0,
-          y: 0,
-        })
+        const frameImage = new Image(this.scene, 0, 0, this.sourceTex.key, curFrame.name)
 
         const scaleX = wantWidth / curFrame.width
         const scaleY = wantHeight / curFrame.height
