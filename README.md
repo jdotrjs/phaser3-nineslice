@@ -35,7 +35,7 @@ pretty easy to show an example:
 
 ## Requirements
 
-- phaser3-nineslice version >= 0.4.0 require Phaser >= 3.12.
+- phaser3-nineslice version >= 0.4.0 require Phaser >= 3.12 and < 3.60.
 - phaser3-nineslice versions 0.3.x require Phaser >= 3.10.
 
 ## Getting the plugin: Directly including it.
